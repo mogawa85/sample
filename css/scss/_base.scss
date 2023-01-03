@@ -1,0 +1,75 @@
+$en: "Poiret One";
+$baseColor: "";
+$subColor: #cce2fe;
+$accentColor1: #1150a5;
+$accentColor2: #01042a;
+$accentColor3: #f97101;
+$accentColor4: #f9b882;
+$textColor: #1b1b1b;
+$breakPoint: 768px;
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.4rem;
+  font-family: "Noto Sans JP", sans-serif;
+  line-height: 1.7;
+  color: $textColor;
+  @media (min-width: $breakPoint) {
+    font-size: 1.6rem;
+  }
+}
+
+a {
+  text-decoration: none;
+  display: block;
+  outline: none;
+  &:focus {
+    border: none;
+  }
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.uppercase {
+  font-family: $en;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+h2 {
+  margin-bottom: 2.5rem;
+
+  .uppercase {
+    display: block;
+    font-size: 4rem;
+    line-height: 1;
+    color: $accentColor1;
+    @media (min-width: $breakPoint) {
+      display: inline-block;
+      margin-right: 0.5em;
+    }
+  }
+}
+
+.flex {
+  @media (min-width: $breakPoint) {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+.text-big {
+  font-size: 1.2em;
+}
+
+.frame {
+  border: 5px solid #fff;
+  box-shadow: 2px 0 10px 2px rgba(0, 0, 0, 0.2);
+}

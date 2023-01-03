@@ -1,0 +1,156 @@
+footer {
+  font-family: $en;
+  background-color: $accentColor2;
+  color: #fff;
+  text-align: center;
+  padding: 1em;
+}
+
+.logo {
+  position: fixed;
+  top: 0.7rem;
+  right: 1em;
+  width: 80px;
+  z-index: 10000;
+  img {
+    filter: brightness(7);
+  }
+  @media (min-width: $breakPoint) {
+    position: absolute;
+    top: 1em;
+    right: calc(5% + 2em);
+    width: 90px;
+  }
+}
+
+.icon--line {
+  position: relative;
+  width: 5rem;
+  height: 0.8em;
+  color: #fff;
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1;
+  span {
+    opacity: 0;
+    color: #fff;
+    transition: 0.5s all ease-in-out;
+    letter-spacing: 3px;
+    margin-left: 0.6rem;
+  }
+
+  &::before,
+  &::after {
+    transition: 0.1s all ease-in-out;
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+  }
+  &::before {
+    top: 0;
+    border-top: 1px solid;
+  }
+  &::after {
+    bottom: 0;
+    border-bottom: 1px solid;
+  }
+  @media (min-width: $breakPoint) {
+    //   transform: rotate(-90deg);
+    //   height: 1.8em;
+    //   padding: 0 1em;
+    //   &::before {
+    //     top: 5px;
+    //   }
+    //   &::after {
+    //     bottom: 3px;
+    //   }
+  }
+}
+.header {
+  position: fixed;
+  display: block;
+  z-index: 10000;
+  cursor: pointer;
+  background-color: $accentColor2;
+  color: #fff;
+  width: 100%;
+  height: 6rem;
+  .vertical {
+    display: none;
+  }
+  @media (min-width: $breakPoint) {
+    display: none;
+  }
+  &__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    letter-spacing: 4px;
+    &.cross {
+      opacity: 0.7;
+      .icon--line {
+        span {
+          display: none;
+        }
+        &::before {
+          transform: rotate(165deg);
+          top: 6px;
+          transition: all 0.5s;
+        }
+        &::after {
+          transform: rotate(-165deg);
+          bottom: 1px;
+          transition: all 0.5s;
+        }
+      }
+    }
+  }
+}
+
+.menu {
+  transition: 0.7s all ease-in-out;
+  max-width: 400px;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  z-index: 1000;
+  top: 0;
+  left: -100rem;
+  padding: 2em;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &.open {
+    left: 0;
+    background-color: $accentColor1;
+  }
+  &__block {
+    padding: 3em 1em;
+  }
+  @media (min-width: $breakPoint) {
+    max-width: 40%;
+    height: auto;
+    margin-left: 0;
+    left: 0;
+    &__block {
+      background-color: rgba($accentColor2, .6);
+      border-radius: 10px;
+      width: 300px;
+      margin: 0 auto;
+    }
+  }
+  a {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 2em;
+    span {
+      display: block;
+      font-size: 3rem;
+      line-height: 1;
+      opacity: 0.7;
+    }
+  }
+}

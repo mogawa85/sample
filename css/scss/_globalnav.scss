@@ -1,0 +1,181 @@
+footer {
+  font-family: $en;
+  background-color: $accentColor2;
+  color: #fff;
+  text-align: center;
+  padding: 1em;
+}
+
+.logo {
+  position: fixed;
+  top: 0.7rem;
+  right: 1em;
+  width: 80px;
+  z-index: 10000;
+  img {
+    filter: brightness(7);
+  }
+  @media (min-width: $breakPoint) {
+    position: absolute;
+    top: 1.5em;
+    right: 2.5em;
+    width: 90px;
+    img {
+      filter: none;
+    }
+  }
+}
+
+.icon--line {
+  position: relative;
+  width: 5rem;
+  height: 0.8em;
+  color: #fff;
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1;
+  span {
+    opacity: 0;
+    color: #fff;
+    transition: .5s all ease-in-out;
+    letter-spacing: 3px;
+    margin-left: 0.6rem;
+  }
+
+  &::before,
+  &::after {
+    transition: .1s all ease-in-out;
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+  }
+  &::before {
+    top: 0;
+    border-top: 1px solid;
+  }
+  &::after {
+    bottom: 0;
+    border-bottom: 1px solid;
+  }
+  @media (min-width: $breakPoint) {
+    transform: rotate(-90deg);
+    height: 1.8em;
+    padding: 0 1em;
+    &::before {
+      top: 5px;
+    }
+    &::after {
+      bottom: 3px;
+    }
+  }
+}
+.header {
+  position: fixed;
+  z-index: 10000;
+  cursor: pointer;
+  background-color: $accentColor2;
+  color: #fff;
+  width: 100%;
+  height: 6rem;
+  .vertical {
+    display: none;
+  }
+  @media (min-width: $breakPoint) {
+    width: 6rem;
+    height: 100vh;
+    .vertical {
+      display: block;
+      transform: rotate(-90deg);
+      letter-spacing: 2px;
+    }
+
+    &:hover {
+      .icon--line {
+        &::before {
+          top: -0.5rem;
+        }
+        span {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  &__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    letter-spacing: 4px;
+    @media (min-width: $breakPoint) {
+      flex-direction: column;
+      justify-content: space-between;
+      height: 53vh;
+      padding: 2em 0 0;
+    }
+    &.cross {
+      opacity: 0.7;
+      .icon--line {
+        span{
+          display: none;
+        }
+        &::before {
+          transform: rotate(165deg);
+          top: 6px;
+          transition: all .5s;
+        }
+        &::after {
+          transform: rotate(-165deg);
+          bottom: 1px;
+          transition: all .5s;
+        }
+        @media (min-width: $breakPoint) {
+          &::before,
+          &::after {
+            top: 10px;
+          }
+          &::after {
+            bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.menu {
+  transition: .7s all ease-in-out;
+  max-width: 400px;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  z-index: 1000;
+  top: 0;
+  left: -100rem;
+  padding: 2em;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &.open {
+    left: 0;
+    background-color: $accentColor1;
+    @media (min-width: $breakPoint) {
+      left: 5rem;
+    }
+  }
+  &__block {
+    padding: 3em 1em;
+  }
+  a {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 2em;
+    span {
+      display: block;
+      font-size: 3rem;
+      line-height: 1;
+      opacity: 0.5;
+    }
+  }
+}

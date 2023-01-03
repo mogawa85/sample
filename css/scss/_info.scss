@@ -1,0 +1,60 @@
+.info {
+  margin-bottom: 0;
+  .flex{
+    align-items: center;
+  }
+  &--img {
+    margin-bottom: 2em;
+    @media (min-width: $breakPoint) {
+      width: calc(100% - 370px);
+      margin-bottom: 0;
+    }
+  }
+  strong {
+    padding-right: 1em;
+  }
+  &__block {
+    width: 100%;
+    @media (min-width: $breakPoint) {
+      width: 355px;
+      margin: 0;
+      padding-left: 3em;
+      box-sizing: border-box;
+    }
+    dt {
+      font-size: 1.2rem;
+      margin-bottom: 1em;
+      font-weight: normal;
+      span {
+        font-family: $en;
+        font-size: 1.8rem;
+      }
+    }
+    dd {
+      font-size: 1.2rem;
+      margin: 0 2em 0.5em;
+      span {
+        display: inline-block;
+        width: 9em;
+
+        &.icon-frame {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 2rem;
+          background-color: $accentColor1;
+          color: #fff;
+          border-radius: 50px;
+          width: 3rem;
+          height: 3rem;
+          margin-left: 1em;
+        }
+      }
+      &.contact {
+        padding-top: 1em;
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+}

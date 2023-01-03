@@ -1,0 +1,101 @@
+.withbg {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.article {
+  &--title {
+    color: $accentColor1;
+    font-size: 1.2em;
+    line-height: 1.4;
+    margin-bottom: 0.5em;
+    &--sub {
+      display: inline-block;
+      font-size: 1.2em;
+    }
+  }
+  &:not(:last-child) {
+    margin-bottom: 2.5em;
+  }
+}
+
+.section__block {
+  width: 100%;
+  margin: 0 auto;
+  padding: 2em 2em 3em;
+  box-sizing: border-box;
+  @media (min-width: $breakPoint) {
+    padding: 0 1em;
+  }
+  &--text {
+    margin: 0 0 2em;
+    @media (min-width: $breakPoint) {
+      margin: 0 2em 3em;
+    }
+  }  
+}
+
+.boxes {
+  .box {
+    &--half,
+    &--third {
+      &:not(:last-child) {
+        margin-bottom: 2em;
+      }
+    }
+    &--half {
+      width: 100%;
+      .frame {
+        margin-bottom: 1rem;
+        border-radius: 10px;
+      }
+    }
+
+    &--third {
+      flex-shrink: 1;
+      width: 100%;
+      .frame {
+        width: 160px;
+        margin: 0 auto 1rem;
+        border-radius: 50%;
+      }
+    }
+    @media (min-width: $breakPoint) {
+      &--half,
+      &--third {
+        margin-bottom: 0;
+      }
+      &--half {
+        width: 45%;
+      }
+      &--third {
+        width: 30%;
+        box-sizing: border-box;
+      }
+    }
+  }
+  figcaption {
+    text-align: center;
+  }
+  .box--info {
+    font-size: 1.4rem;
+    text-align: center;
+    .name {
+      font-size: 1.2em;
+      margin-bottom: 0.5em;
+    }
+    .label {
+      font-size: 0.9em;
+      color: #1150a5;
+      padding-right: 1em;
+    }
+    dd:not(:last-child) {
+      line-height: 1.5;
+    }
+    @media (min-width: $breakPoint) {
+      .memo{
+        font-size: 12px;
+      }
+      
+    }
+  }
+}
